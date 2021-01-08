@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Description>Cake.Tools.ReadyAPI.TestRunner allows for the build time integration of ReadyAPI automated testing.</Description>
+    <Authors>Will Axtell</Authors>
+    <TargetFrameworks>netstandard2.0;net46</TargetFrameworks>
+    <DebugType>portable</DebugType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyName>Cake.Tools.ReadyAPI.TestRunner</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Cake.Tools.ReadyAPI.TestRunner</PackageId>
+    <PackageTags>Cake;Script;Build;ReadyAPI;TestRunner;SmartBear</PackageTags>
+    <PackageProjectUrl>https://github.com/waxtell/Cake.Tools.ReadyAPI.TestRunner</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/waxtell/Cake.Tools.ReadyAPI.TestRunner.git</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Cake.Core" Version="0.38.5">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net46' ">
+    <Reference Include="System" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+
+</Project>
