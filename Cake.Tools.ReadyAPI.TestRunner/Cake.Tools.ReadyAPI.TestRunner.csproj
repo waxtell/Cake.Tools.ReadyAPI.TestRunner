@@ -12,6 +12,14 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <AssemblyName>Cake.Tools.ReadyAPI.TestRunner</AssemblyName>
+
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -21,9 +29,11 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/waxtell/Cake.Tools.ReadyAPI.TestRunner.git</RepositoryUrl>
+    <PackageReleaseNotes>1.0.0- Initial release</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
     <PackageReference Include="Cake.Core" Version="0.38.5">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
