@@ -6,42 +6,42 @@ namespace Cake.Tools.ReadyAPI.TestRunner.Tests
     public partial class TestRunnerRunnerTests
     {
         [Fact]
-        public void GetArguments_EndPointProvidedHasArgument()
+        public void GetArguments_OutputFolderProvidedHasArgument()
         {
             var settings = new TestRunnerSettings
             {
-                EndPoint = "http://localhost:8080"
+                OutputFolder = "HelloWorld"
             };
 
             var args = TestRunnerRunner.GetArguments(string.Empty, settings);
 
-            Assert.Equal(1, args.Count(argument => argument.Render() == "-ehttp://localhost:8080"));
+            Assert.Equal(1, args.Count(argument => argument.Render() == "-fHelloWorld"));
         }
 
         [Fact]
-        public void GetArguments_EmptyEndPointNoArgument()
+        public void GetArguments_EmptyOutputFolderNoArgument()
         {
             var settings = new TestRunnerSettings
             {
-                EndPoint = string.Empty
+                OutputFolder = string.Empty
             };
 
             var args = TestRunnerRunner.GetArguments(string.Empty, settings);
 
-            Assert.Equal(0, args.Count(argument => argument.Render().StartsWith("-e")));
+            Assert.Equal(0, args.Count(argument => argument.Render().StartsWith("-f")));
         }
 
         [Fact]
-        public void GetArguments_NullEndPointNoArgument()
+        public void GetArguments_NullOutputFolderNoArgument()
         {
             var settings = new TestRunnerSettings
             {
-                EndPoint = null
+                OutputFolder = null
             };
 
             var args = TestRunnerRunner.GetArguments(string.Empty, settings);
 
-            Assert.Equal(0, args.Count(argument => argument.Render().StartsWith("-e")));
+            Assert.Equal(0, args.Count(argument => argument.Render().StartsWith("-f")));
         }
     }
 }

@@ -93,7 +93,7 @@ namespace Cake.Tools.ReadyAPI.TestRunner
                 arguments.Append($"-f{settings.OutputFolder}");
             }
 
-            if (settings.ReportFormats != null)
+            if (settings.ReportFormats != null && settings.ReportFormats.Any())
             {
                 arguments.Append($"-F{string.Join(",", settings.ReportFormats)}");
             }

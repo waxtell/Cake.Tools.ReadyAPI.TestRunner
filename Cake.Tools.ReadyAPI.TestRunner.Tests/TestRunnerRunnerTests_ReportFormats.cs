@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
@@ -6,42 +7,42 @@ namespace Cake.Tools.ReadyAPI.TestRunner.Tests
     public partial class TestRunnerRunnerTests
     {
         [Fact]
-        public void GetArguments_EndPointProvidedHasArgument()
+        public void GetArguments_ReportFormatsProvidedHasArgument()
         {
             var settings = new TestRunnerSettings
             {
-                EndPoint = "http://localhost:8080"
+                ReportFormats = new []{"PDF","XLS"}
             };
 
             var args = TestRunnerRunner.GetArguments(string.Empty, settings);
 
-            Assert.Equal(1, args.Count(argument => argument.Render() == "-ehttp://localhost:8080"));
+            Assert.Equal(1, args.Count(argument => argument.Render() == "-FPDF,XLS"));
         }
 
         [Fact]
-        public void GetArguments_EmptyEndPointNoArgument()
+        public void GetArguments_EmptyReportFormatsNoArgument()
         {
             var settings = new TestRunnerSettings
             {
-                EndPoint = string.Empty
+                ReportFormats = new List<string>()
             };
 
             var args = TestRunnerRunner.GetArguments(string.Empty, settings);
 
-            Assert.Equal(0, args.Count(argument => argument.Render().StartsWith("-e")));
+            Assert.Equal(0, args.Count(argument => argument.Render().StartsWith("-F")));
         }
 
         [Fact]
-        public void GetArguments_NullEndPointNoArgument()
+        public void GetArguments_NullReportFormatsNoArgument()
         {
             var settings = new TestRunnerSettings
             {
-                EndPoint = null
+                ReportFormats = null
             };
 
             var args = TestRunnerRunner.GetArguments(string.Empty, settings);
 
-            Assert.Equal(0, args.Count(argument => argument.Render().StartsWith("-e")));
+            Assert.Equal(0, args.Count(argument => argument.Render().StartsWith("-F")));
         }
     }
 }
