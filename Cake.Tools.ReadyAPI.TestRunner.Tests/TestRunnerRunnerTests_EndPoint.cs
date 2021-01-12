@@ -6,24 +6,24 @@ namespace Cake.Tools.ReadyAPI.TestRunner.Tests
     public partial class TestRunnerRunnerTests
     {
         [Fact]
-        public void GetArguments_DomainProvidedHasArgument()
+        public void GetArguments_EndPointProvidedHasArgument()
         {
             var settings = new TestRunnerSettings
             {
-                Domain = "HelloWorld"
+                EndPoint = "localhost:8080"
             };
 
             var args = TestRunnerRunner.GetArguments(string.Empty, settings);
 
-            Assert.Equal(1, args.Count(argument => argument.Render() == "-dHelloWorld"));
+            Assert.Equal(1, args.Count(argument => argument.Render() == "-dlocalhost:8080"));
         }
 
         [Fact]
-        public void GetArguments_EmptyDomainNoArgument()
+        public void GetArguments_EmptyEndPointNoArgument()
         {
             var settings = new TestRunnerSettings
             {
-                Domain = string.Empty
+                EndPoint = string.Empty
             };
 
             var args = TestRunnerRunner.GetArguments(string.Empty, settings);
@@ -32,11 +32,11 @@ namespace Cake.Tools.ReadyAPI.TestRunner.Tests
         }
 
         [Fact]
-        public void GetArguments_NullDomainNoArgument()
+        public void GetArguments_NullEndPointNoArgument()
         {
             var settings = new TestRunnerSettings
             {
-                Domain = null
+                EndPoint = null
             };
 
             var args = TestRunnerRunner.GetArguments(string.Empty, settings);
