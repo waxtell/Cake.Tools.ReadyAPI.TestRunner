@@ -44,7 +44,7 @@ namespace Cake.Tools.ReadyAPI.TestRunner
             return "testrunner";
         }
 
-        private static ProcessArgumentBuilder GetArguments(string projectFile, TestRunnerSettings settings)
+        internal static ProcessArgumentBuilder GetArguments(string projectFile, TestRunnerSettings settings)
         {
             var arguments = new ProcessArgumentBuilder();
 
