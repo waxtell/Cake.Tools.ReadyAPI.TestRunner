@@ -165,6 +165,11 @@ namespace Cake.Tools.ReadyAPI.TestRunner
         public bool SuppressUsageStatistics { get; set; }
 
         /// <summary>
+        /// Specifies the password for your XML setting file.
+        /// </summary>
+        public string SettingsPassword { get; set; }
+
+        /// <summary>
         /// Specifies a value of a system property for the test run. This value will override the variable’s value during the run.
         /// </summary>
         public IDictionary<string, string> SystemProperties { get; set; }

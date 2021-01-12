@@ -184,7 +184,7 @@ namespace Cake.Tools.ReadyAPI.TestRunner
 
             if (!string.IsNullOrWhiteSpace(settings.TestSuite))
             {
-                arguments.Append($"-s{settings.TestSuite}");
+                arguments.Append($"\"-s{settings.TestSuite}\"");
             }
 
             if (settings.SaveProject)
@@ -212,9 +212,9 @@ namespace Cake.Tools.ReadyAPI.TestRunner
                 arguments.Append($"-u{settings.Username}");
             }
 
-            if (!string.IsNullOrWhiteSpace(settings.Password))
+            if (!string.IsNullOrWhiteSpace(settings.SettingsPassword))
             {
-                arguments.Append($"-v{settings.Password}");
+                arguments.Append($"-v{settings.SettingsPassword}");
             }
 
             if (!string.IsNullOrWhiteSpace(settings.PasswordType))
