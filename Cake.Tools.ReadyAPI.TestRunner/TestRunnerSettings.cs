@@ -103,7 +103,7 @@ namespace Cake.Tools.ReadyAPI.TestRunner
         /// <summary>
         /// Sets the WSS password type, either 'Text' or 'Digest'
         /// </summary>
-        public string PasswordType { get; set; }
+        public PasswordType? PasswordType { get; set; }
 
         /// <summary>
         /// Prints a small summary report

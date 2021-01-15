@@ -240,9 +240,9 @@ namespace Cake.Tools.ReadyAPI.TestRunner
                 arguments.Append($"-v{settings.SettingsPassword}");
             }
 
-            if (!string.IsNullOrWhiteSpace(settings.PasswordType))
+            if (settings.PasswordType.HasValue)
             {
-                arguments.Append($"-w{settings.PasswordType}");
+                arguments.Append($"-w{settings.PasswordType.Value}");
             }
 
             if (!string.IsNullOrWhiteSpace(settings.SlackAccessToken) && settings.SlackChannels != null && settings.SlackChannels.Any())
