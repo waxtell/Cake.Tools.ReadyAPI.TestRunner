@@ -177,9 +177,31 @@ namespace Cake.Tools.ReadyAPI.TestRunner
                 arguments.Append("-r");
             }
             
-            if (!string.IsNullOrWhiteSpace(settings.Report))
+            if (settings.Report.HasValue)
             {
-                arguments.Append($"\"-R{settings.Report}\"");
+                switch (settings.Report.Value)
+                {
+                    case ReportType.Allure:
+                        arguments.Append("\"-RAllure Report\"");
+                        break;
+                    case ReportType.DataExport:
+                        arguments.Append("\"-RData Export\"");
+                        break;
+                    case ReportType.JUnitStyleHtml:
+                        arguments.Append("\"-RJUnit-Style HTML Report\"");
+                        break;
+                    case ReportType.Project:
+                        arguments.Append("\"-RProject Report\"");
+                        break;
+                    case ReportType.TestCase:
+                        arguments.Append("\"-RTestCase Report\"");
+                        break;
+                    case ReportType.TestSuite:
+                        arguments.Append("\"-RTestSuite Report\"");
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
             }
 
             if (!string.IsNullOrWhiteSpace(settings.TestSuite))

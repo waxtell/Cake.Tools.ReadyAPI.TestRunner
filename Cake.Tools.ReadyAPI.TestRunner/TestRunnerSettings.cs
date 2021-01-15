@@ -131,7 +131,7 @@ namespace Cake.Tools.ReadyAPI.TestRunner
         /// <item><term>Allure Report:</term><description>Generates Allure results.Use the Allure framework to generate an actual report.See Allure Report.</description></item>
         /// </list>
         /// </summary>
-        public string Report { get; set; }
+        public ReportType? Report { get; set; }
 
         /// <summary>
         /// Specifies the format of the reports ReadyAPI exports.
