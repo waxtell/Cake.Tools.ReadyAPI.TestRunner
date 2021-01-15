@@ -18,8 +18,8 @@ First, add the extension in the usual way:
 ...
 
 Task("FunctionalTest")
-	.Does
-	(
+    .Does
+    (
         () =>
         {
             var result = LaunchTestRunner
@@ -37,8 +37,8 @@ Task("FunctionalTest")
             {
                 throw new Exception("One or more functional tests failed!");
             }
-		}
-	);
+        }
+    );
 ```
 The extension expects TestRunner.bat to be available in the system path, but you may explicitly set the tool location as such
 
