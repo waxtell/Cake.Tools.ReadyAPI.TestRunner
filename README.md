@@ -1,6 +1,6 @@
 # Cake.Tools.ReadyAPI.TestRunner
 
-A Cake AddIn that extends Cake with the [SmartBear ReadAPI TestRunner](https://support.smartbear.com/readyapi/docs/functional/running/automating/cli.html) command line tool.
+A Cake AddIn that extends Cake with the [SmartBear ReadyAPI TestRunner](https://support.smartbear.com/readyapi/docs/functional/running/automating/cli.html) command line tool.
 
 [![NuGet](https://img.shields.io/nuget/v/Cake.ProtobufTools.svg)](https://www.nuget.org/packages/Cake.Tools.ReadyAPI.TestRunner)
 ![Build](https://github.com/waxtell/Cake.Tools.ReadyAPI.TestRunner/workflows/Build/badge.svg)
@@ -11,8 +11,6 @@ First, add the extension in the usual way:
 #addin "Cake.Tools.ReadyAPI.TestRunner"
 ```
 ## Usage
-
-First add the extension.
 
 ```csharp
 #addin "Cake.Tools.ReadyAPI.TestRunner"
