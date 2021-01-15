@@ -4,6 +4,7 @@ using System.Linq;
 using Cake.Core;
 using Cake.Core.IO;
 using Cake.Core.Tooling;
+using Cake.Tools.ReadyAPI.TestRunner.Extensions;
 
 namespace Cake.Tools.ReadyAPI.TestRunner
 {
@@ -93,9 +94,9 @@ namespace Cake.Tools.ReadyAPI.TestRunner
                 arguments.Append($"-f{settings.OutputFolder}");
             }
 
-            if (settings.ReportFormats != null && settings.ReportFormats.Any())
+            if (settings.ReportFormats.HasValue)
             {
-                arguments.Append($"-F{string.Join(",", settings.ReportFormats)}");
+                arguments.Append($"-F{string.Join(",", settings.ReportFormats.Value.GetFlags().Select(x => x.ToString()))}");
             }
 
             if (settings.CreateCoverageReport)

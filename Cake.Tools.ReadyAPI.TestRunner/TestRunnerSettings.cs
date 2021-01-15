@@ -137,7 +137,7 @@ namespace Cake.Tools.ReadyAPI.TestRunner
         /// Specifies the format of the reports ReadyAPI exports.
         /// <para>ReadyAPI supports the following formats: PDF, XLS, HTML, RTF, CSV, TXT and XML.If you have not specified the parameter, ReadyAPI will use the PDF format.</para>
         /// </summary>
-        public IEnumerable<string> ReportFormats { get; set; }
+        public ReportFormat? ReportFormats { get; set; }
 
         /// <summary>
         /// Commands the runner to save the test project after the test run finishes. Use this command-line argument if you store data within the project during the test.
