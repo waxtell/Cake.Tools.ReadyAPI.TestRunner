@@ -20,8 +20,8 @@ First, add the extension in the usual way:
 Task("FunctionalTest")
 	.Does
 	(
-		() =>
-		{
+        () =>
+        {
             var result = LaunchTestRunner
             (
                 "demo-readyapi-project.xml",
